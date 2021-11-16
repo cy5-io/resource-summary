@@ -1,7 +1,7 @@
 # aws-resource-summary
 This command line utility generates a summary of resources across the AWS regions provided by the user.
 
-This is a simple Python script that will count resources across different regions and display them on the command line. It first takes the input of regions from the user and then displays the resource count for each of the following resource on the screen. At last, it also shows the total resource count of region-specefic resources and also, the global resources such as IAM, Cloudfront etc. 
+It is a simple Python script that will count resources across different regions and display them on the command line. It first takes the input of regions from the user and then displays the resource count for each of the following resource on the screen. At last, it also shows the total resource count of region-specefic resources and also, the global resources such as IAM, Cloudfront etc. 
 
 Following are the resources that the utility generates a summary for:
 
