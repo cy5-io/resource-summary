@@ -1,15 +1,15 @@
-# aws-resource-counter
-This command line tool counts the number of resources in different categories across the Amazon regions provided by the user.
+# aws-resource-summary
+This command line utility generates a summary of resources across the AWS regions provided by the user.
 
 This is a simple Python script that will count resources across different regions and display them on the command line. It first takes the input of regions from the user and then displays the resource count for each of the following resource on the screen. At last, it also shows the total resource count of region-specefic resources and also, the global resources such as IAM, Cloudfront etc. 
 
-Following are the resources that this tool shows the resource count of:
+Following are the resources that the utility generates a summary for:
 
 * IAM Users
 * IAM Groups
 * IAM Roles
 * Cloudfront Distributions
-* s3 buckets
+* S3 buckets
 * Subnets
 * VPCs
 * VPC Endpoints
@@ -41,23 +41,28 @@ Following are the resources that this tool shows the resource count of:
 
 ## Usage:
 
-To install just copy it where you want it and instally the requirements:
+Installation:
 
 	pip install -r requirements.txt
+	git clone https://github.com/cy5-io/resource-summary.git
+	cd resource-summary
 
-To run:
+Execution:
 
-	python3 resource_count.py 
+	python resource_count.py 
 
-It will use the AWS credentials that are already configured on the system. 
-It only neeeds the SecurityAudit managed policy.
+## Required Permissions:
+
+The sript uses AWS credentials that are configured via the AWS CLI. Please ensure the user / IAM principal being used has the required permissions on the AWS account for which the resource summary is being requested.
+
+The script requires read-only access via the AWS managed policy "SecurityAudit".
 
 ## Sample Output:
 
 Enter the regions:
 (press Enter twice, when you’re done providing regions)
 
-ap-south-1
+us-east-1
 eu-central-1
 
 
@@ -68,7 +73,7 @@ Groups: 1
 Roles: 76
 Cloudfront Distributions: 1
 
-Collecting region-specific resource count for Account XXXXXXXXXXXX in region ap-south-1
+Collecting region-specific resource count for Account XXXXXXXXXXXX in region us-east-1
 
 s3 buckets: 17
 Subnets: 10
@@ -102,7 +107,7 @@ Kafka Clusters: 0
 
 
 Account ID: XXXXXXXXXXXX
-Total count of resources in 'ap-south-1' region: 94
+Total count of resources in 'us-east-1' region: 94
 
 
 Collecting region-specific resource count for Account XXXXXXXXXXXX in region eu-central-1
