@@ -76,7 +76,9 @@ Cloudfront Distributions: 1
 Collecting region-specific resource count for Account XXXXXXXXXXXX in region us-east-1
 
 s3 buckets: 17
+
 Subnets: 10
+
 VPCs: 4
 VPC Endpoints: 2
 EC2 Instances: 4
