@@ -43,9 +43,9 @@ Following are the resources that the utility generates a summary for:
 
 Installation:
 
-	pip install -r requirements.txt
 	git clone https://github.com/cy5-io/resource-summary.git
 	cd resource-summary
+	pip install -r requirements.txt
 
 Execution:
 
