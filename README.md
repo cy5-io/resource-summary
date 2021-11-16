@@ -49,7 +49,7 @@ Installation:
 
 Execution:
 
-	python resource_count.py 
+	Using Python3 -> python resource_count.py 
 
 ## Required Permissions:
 
