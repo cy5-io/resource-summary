@@ -39,7 +39,7 @@ Following are the resources that the utility generates a summary for:
 * API Gateway Rest APIs
 * Kafka Clusters
 
-## Usage:
+## Usage (supports python 3.x):
 
 Installation:
 
@@ -49,7 +49,7 @@ Installation:
 
 Execution:
 
-	Using Python3 -> python resource_count.py 
+	python resource_count.py 
 
 ## Required Permissions:
 
