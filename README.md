@@ -53,7 +53,7 @@ Execution:
 
 ## Required Permissions:
 
-The sript uses AWS credentials that are configured via the AWS CLI. Please ensure the user / IAM principal being used has the required permissions on the AWS account for which the resource summary is being requested.
+The script uses AWS credentials that are configured via the AWS CLI. Please ensure the user / IAM principal being used has the required permissions on the AWS account for which the resource summary is being requested.
 
 The script requires read-only access via the AWS managed policy "SecurityAudit".
 
