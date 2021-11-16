@@ -45,7 +45,7 @@ Installation:
 
 	git clone https://github.com/cy5-io/resource-summary.git
 	cd resource-summary
-	pip install -r requirements.txt
+	pip install boto3
 
 Execution:
 
