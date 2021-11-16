@@ -63,6 +63,7 @@ Enter the regions:
 (press Enter twice, when you’re done providing regions)
 
 us-east-1
+
 eu-central-1
 
 
