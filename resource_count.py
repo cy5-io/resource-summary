@@ -29,25 +29,28 @@ groups = iam.list_groups()['Groups']
 print("Groups: " + str(len(groups)))
 roles = iam.list_roles()['Roles']
 print("Roles: " + str(len(roles)))
+policies = iam.list_policies()['Policies']
+print("Policies: " + str(len(policies)))
 
-cfront = session.client('cloudfront', region_name=region)
+s3 = session.client('s3')
+try:
+    buckets = s3.list_buckets()['Buckets']
+except:
+    buckets = []
+print("s3 buckets: " + str(len(buckets)))        
+
+
+cfront = session.client('cloudfront')
 try:
     distributions = cfront.list_distributions()['DistributionList']['Items']
 except:
     distributions = []
 print("Cloudfront Distributions: " + str(len(distributions)))
 
-total_global = len(users+roles+groups+distributions)
+total_global = len(users+roles+groups+policies+buckets+distributions)
 
 for region in regions:
         print("\nCollecting region-specific resource count for Account " + str(account_id) + " in region " + region + "\n" )
-
-        s3 = session.client('s3', region_name = region)
-        try:
-            buckets = s3.list_buckets()['Buckets']
-        except:
-            buckets = []
-        print("s3 buckets: " + str(len(buckets)))        
 
         ec2 = session.client('ec2', region_name = region)
         try:
@@ -229,7 +232,7 @@ for region in regions:
             kafka_clusters = []
         print("Kafka Clusters: " + str(len(kafka_clusters)))
 
-        total_region = len(buckets+subnets+vpc+endpoints+sec_groups+rtables+ebs_volumes+ebs_snapshots+functions+queues+tables+global_tables+clusters+instances+db_snapshots+domains+ecache_clusters+r_clusters+repos+eks_clusters+ecs_clusters+docdb_clusters+neptune_clusters+streams+api_list+kafka_clusters) + alb +nlb + instance_count
+        total_region = len(subnets+vpc+endpoints+sec_groups+rtables+ebs_volumes+ebs_snapshots+functions+queues+tables+global_tables+clusters+instances+db_snapshots+domains+ecache_clusters+r_clusters+repos+eks_clusters+ecs_clusters+docdb_clusters+neptune_clusters+streams+api_list+kafka_clusters) + alb +nlb + instance_count
 
         print("\n\nAccount ID: " + str(account_id))
         print("Total count of resources in '" + region + "' region: " + str(total_region) + "\n")
